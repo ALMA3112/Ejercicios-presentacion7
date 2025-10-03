@@ -60,12 +60,12 @@ class ParserEx3:
         ok = self.S()
         return ok and self.pos == len(self.tokens)
 
-# --- Ejemplo de uso:
 if __name__ == "__main__":
     tests = [
         ['dos','cuatro','tres','uno','uno'],  # S -> A B C Sp posible
-        ['cuatro','tres']  # A->ε, B->C tres when C->cuatro B (here C->cuatro ...), etc.
+        ['cuatro','tres']  
     ]
     for t in tests:
         p = ParserEx3(t)
         print("Tokens:", t, "=>", "ACCEPT" if p.parse() else "REJECT")
+
