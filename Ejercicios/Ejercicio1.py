@@ -42,7 +42,7 @@ class ParserEx1:
         return self.Bp()
 
     def Bp(self):
-        # repetition: zero or more "cuatro C cinco"
+        
         while self.peek() == 'cuatro':
             if not self.match('cuatro'): return False
             if not self.C(): return False
@@ -80,8 +80,9 @@ class ParserEx1:
 if __name__ == "__main__":
     tests = [
         ['dos','cuatro','seis','dos','cinco','tres'],  # ejemplo arbitrario
-        ['uno','tres']  # D -> uno A E con A->ε, E->tres
+        ['uno','tres']  
     ]
     for t in tests:
         p = ParserEx1(t)
         print("Tokens:", t, "=>", "ACCEPT" if p.parse() else "REJECT")
+
